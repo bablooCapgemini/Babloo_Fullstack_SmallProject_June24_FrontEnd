@@ -6,6 +6,7 @@ import { of } from 'rxjs';
 import { ViewEmployeeComponent } from './view-employee.component';
 import { EmployeeService } from '../../../services/employee.service';
 import { Employee } from '../../../interface/employee';
+import { By } from '@angular/platform-browser';
 
 describe('ViewEmployeeComponent', () => {
   let fixture: ComponentFixture<ViewEmployeeComponent>;
