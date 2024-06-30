@@ -1,0 +1,49 @@
+{
+  "employeeList": [
+    {
+      "firstName": "babs",
+      "lastName": "babs",
+      "email": "babs",
+      "phone": 87,
+      "salary": 87,
+      "address": "bavs",
+      "id": 1
+    },
+    {
+      "firstName": "great",
+      "lastName": "great",
+      "email": "great",
+      "phone": 98,
+      "salary": 9,
+      "address": "great",
+      "id": 2
+    },
+    {
+      "firstName": "hghghghg",
+      "lastName": "hghghghg",
+      "email": "hghghg@gmail.com",
+      "phone": 876,
+      "salary": 765,
+      "address": "hghg",
+      "id": 3
+    },
+    {
+      "firstName": "uuu",
+      "lastName": "uuu",
+      "email": "uuu",
+      "phone": 777,
+      "salary": 7777,
+      "address": "uuu",
+      "id": 4
+    },
+    {
+      "firstName": "Five",
+      "lastName": "Five",
+      "email": "Five",
+      "phone": 765,
+      "salary": 87,
+      "address": "Five",
+      "id": 5
+    }
+  ]
+}

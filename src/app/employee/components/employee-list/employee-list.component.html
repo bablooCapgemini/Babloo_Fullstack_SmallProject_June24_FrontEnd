@@ -1,0 +1,47 @@
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Employee Records</h1>
+    
+    <div class="table-responsive ">
+        <div class="form-group  mb-2">
+            <input type="text" class="form-control search-field border-primary" placeholder="Search Records" [(ngModel)]="searchText">
+          </div>
+        <table class="table align-middle table-bordered border-primary">
+            <thead>
+                <tr>
+                    <th>EmpId</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                    <th>Salary</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of list | searchRecord: searchText">
+                    <td>{{emp.id}}</td>
+                    <td>{{emp.firstName}}</td>
+                    <td>{{emp.lastName}}</td>
+                    <td>{{emp.email}}</td>
+                    <td>{{emp.phone}}</td>
+                    <td>{{emp.salary}}</td>
+                    <td>{{emp.address}}</td>
+                    <td>
+                        <a href="#" [routerLink]="['/employeeList/', emp.id, 'view']"
+                            class="btn btn-success mx-2">Details</a>
+                        <a href="#" [routerLink]="['/employeeList/', emp.id, 'edit']" class="btn btn-primary mx-2">Update</a>
+                        <button type="button" (click)="deleteData(emp.id)" class="btn btn-danger  mx-2">Delete</button>
+                    </td>
+                </tr>
+                <tr *ngIf="list.length === 0">
+                    <td colspan="8">
+                        <h4 class="text-center"> No record found </h4></td>
+                </tr>                                
+            </tbody>
+        </table>
+        <!-- <span *ngIf="list.length === 0">No records found></span>
+        <div *ngIf="list.length === 0"> No records found </div> -->
+    </div>
+    <a href="#" routerLink="/employeeList/create/" class="btn btn-success  mt-3 text-center mx-auto">Add New Employee Record</a>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+    <h1>Create New Record</h1>
+  
+    <a href="#" routerLink="/employeeList/" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="title">firstName</label>
+            <input 
+                formControlName="firstName"
+                id="firstName" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['firstName'].touched && f['firstName'].invalid" class="alert alert-danger">
+                <div *ngIf="f['firstName'].errors && f['firstName'].errors['required']">firstName is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">lastName</label>
+            <input 
+                formControlName="lastName"
+                id="lastName" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['lastName'].touched && f['lastName'].invalid" class="alert alert-danger">
+                <div *ngIf="f['lastName'].errors && f['lastName'].errors['required']">lastName is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Email</label>
+            <input 
+                formControlName="email"
+                id="email" 
+                type="email" 
+                class="form-control">
+            <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                <div *ngIf="f['email'].errors && f['email'].errors['required']">email is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">phone</label>
+            <input 
+                formControlName="phone"
+                id="phone" 
+                type="number" 
+                class="form-control">
+            <div *ngIf="f['phone'].touched && f['phone'].invalid" class="alert alert-danger">
+                <div *ngIf="f['phone'].errors && f['phone'].errors['required']">phone is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">salary</label>
+            <input 
+                formControlName="salary"
+                id="salary" 
+                type="number" 
+                class="form-control">
+            <div *ngIf="f['salary'].touched && f['salary'].invalid" class="alert alert-danger">
+                <div *ngIf="f['salary'].errors && f['salary'].errors['required']">salary is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title">Address</label>
+            <input 
+                formControlName="address"
+                id="address" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['address'].touched && f['address'].invalid" class="alert alert-danger">
+                <div *ngIf="f['address'].errors && f['address'].errors['required']">address is required.</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
