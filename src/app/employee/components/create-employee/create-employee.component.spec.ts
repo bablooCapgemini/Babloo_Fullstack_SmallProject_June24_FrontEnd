@@ -19,17 +19,6 @@ describe('CreateEmployeeComponent', () => {
   class MockRouter {
     navigateByUrl(url: string) { return url; }
   }
-  // beforeEach(async () => {
-  //   await TestBed.configureTestingModule({
-  //     declarations: [CreateEmployeeComponent],
-  //     imports: [ReactiveFormsModule],
-  //     providers: [
-  //       { provide: EmployeeService, useClass: MockEmployeeService },
-  //       { provide: Router, useClass: MockRouter }
-  //     ]
-  //   }).compileComponents();
-  // });
-
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [CreateEmployeeComponent],
