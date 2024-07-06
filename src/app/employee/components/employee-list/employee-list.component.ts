@@ -18,7 +18,7 @@ export class EmployeeListComponent {
   ngOnInit(): void {
     this._employeeService.getAllEmployee().subscribe((data: Employee[]) => {
       this.list = data;
-      console.log(this.list);      
+     // console.log(this.list);      
     })
   }
   deleteData(id: number) {
