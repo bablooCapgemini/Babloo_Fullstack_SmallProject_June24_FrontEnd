@@ -1,33 +1,37 @@
+: => {{ empData.id }}
 <div class="container">
-    <h1 class="text-center mt-5 mb-5">Employee Details</h1>    
-    <div class="table-responsive ">  
-    <a href="#" routerLink="/employeeList" class="btn btn-primary mb-3">Back</a>
-    <table class="table align-middle table-bordered border-primary">
-        <thead>
-            <tr>
-                <th>EmpId</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Email</th>
-                <th>Phone No.</th>
-                <th>Salary</th>
-                <th>Address</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ empData.id }}</td>
-                <td>{{ empData.firstName }}</td>
-                <td>{{ empData.lastName }}</td>
-                <td>{{ empData.email }}</td>
-                <td>{{ empData.phone }}</td>
-                <td>{{ empData.salary }}</td>
-                <td>{{ empData.address }}</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+    <h1 class="text-center mt-5 mb-5">Employee Details</h1>
+    <div *ngIf="empData">
+        <div class="table-responsive ">
+            <a href="#" routerLink="/employeeList" class="btn btn-primary mb-3">Back</a>
+            <table class="table align-middle table-bordered border-primary">
+                <thead>
+                    <tr>
+                        <th>EmpId</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>Phone No.</th>
+                        <th>Salary</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ empData.id }}</td>
+                        <td>{{ empData.firstName }}</td>
+                        <td>{{ empData.lastName }}</td>
+                        <td>{{ empData.email }}</td>
+                        <td>{{ empData.phone }}</td>
+                        <td>{{ empData.salary }}</td>
+                        <td>{{ empData.address }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div *ngIf="!empData">
+        <h1>Loading ....</h1>
+    </div>
 
 </div>
-
-

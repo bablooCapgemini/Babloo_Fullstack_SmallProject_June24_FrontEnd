@@ -38,7 +38,8 @@ export class EditEmployeeComponent {
 
   submit(){
     console.log(this.form.value);
-    this._employeeService.updateEmployee(this.id, this.form.value).subscribe((res:any) => {
+    this._employeeService.updateEmployee(this.id, this.form.value).subscribe(res => {
+      this.emp = res;
          this.router.navigateByUrl('employeeList');
     })
   }

@@ -50,9 +50,8 @@
             <label for="title">Phone</label>
             <input formControlName="phone" id="phone" type="number" class="form-control">
             <div *ngIf="f['phone'].touched && f['phone'].invalid" class="alert alert-danger">
-                <div *ngIf="f['phone'].errors && f['phone'].errors['required']">phone is required.</div>
-                <div *ngIf="f['phone'].errors['pattern']">Enter Valid Phone No.</div>
-
+                <div *ngIf="f['phone'].errors && f['phone'].errors['required']">phone number is required.</div>
+                <div *ngIf="f['phone'].errors['pattern']">Enter correct phone No.</div>
             </div>
         </div>
         <div class="form-group">
@@ -61,7 +60,7 @@
             <div *ngIf="f['salary'].touched && f['salary'].invalid" class="alert alert-danger">
                 <div *ngIf="f['salary'].errors && f['salary'].errors['required']">salary is required.</div>
                 <div *ngIf="f['salary'].errors['min']">
-                    salary is greater than 5000
+                    salary should be greater than 1000
                 </div>
             </div>
         </div>

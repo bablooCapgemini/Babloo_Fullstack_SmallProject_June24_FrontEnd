@@ -1,10 +1,11 @@
 <div class="container">
     <h1 class="text-center mt-5 mb-5">Employee Records</h1>
-    
+
     <div class="table-responsive ">
         <div class="form-group  mb-2">
-            <input type="text" class="form-control search-field border-primary" placeholder="Search Records" [(ngModel)]="searchText">
-          </div>
+            <input type="text" class="form-control search-field border-primary" placeholder="Search Records"
+                [(ngModel)]="searchText">
+        </div>
         <table class="table align-middle table-bordered border-primary">
             <thead>
                 <tr>
@@ -20,7 +21,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let emp of list | searchRecord: searchText">
-                    <td>{{emp.id}}</td>
+                    <td>{{emp.empId}}</td>
                     <td>{{emp.firstName}}</td>
                     <td>{{emp.lastName}}</td>
                     <td>{{emp.email}}</td>
@@ -28,20 +29,25 @@
                     <td>{{emp.salary}}</td>
                     <td>{{emp.address}}</td>
                     <td>
-                        <a href="#" [routerLink]="['/employeeList/', emp.id, 'view']"
+                        <a href="#" [routerLink]="['/employeeList/', emp.empId, 'view']"
                             class="btn btn-success mx-2">Details</a>
-                        <a href="#" [routerLink]="['/employeeList/', emp.id, 'edit']" class="btn btn-primary mx-2">Update</a>
-                        <button type="button" (click)="deleteData(emp.id)" class="btn btn-danger  mx-2">Delete</button>
+                        <a href="#" [routerLink]="['/employeeList/', emp.empId, 'edit']"
+                            class="btn btn-primary mx-2">Update</a>
+                        <button type="button" (click)="deleteData(emp.empId)"
+                            class="btn btn-danger  mx-2">Delete</button>
                     </td>
                 </tr>
                 <tr *ngIf="list.length === 0">
                     <td colspan="8">
-                        <h4 class="text-center"> No record found </h4></td>
-                </tr>                                
+                        <h4 class="text-center"> No record found </h4>
+                    </td>
+                </tr>
             </tbody>
         </table>
-        <!-- <span *ngIf="list.length === 0">No records found></span>
-        <div *ngIf="list.length === 0"> No records found </div> -->
     </div>
-    <a href="#" routerLink="/employeeList/create/" class="btn btn-success  mt-3 text-center mx-auto">Add New Employee Record</a>
+    <a href="#" routerLink="/employeeList/create/" class="btn btn-success  mt-3 text-center mx-auto">Add New Employee
+        Record</a>    
+    <button class="btn btn-primary mx-2 mt-3 demo" (click)="filterEmployeesWithHighSalary()">Employee Salary >
+        5000</button>
+    <button class="btn btn-primary mx-2 mt-3 demo" (click)="viewAllEmployee()">View All Employee</button>
 </div>
